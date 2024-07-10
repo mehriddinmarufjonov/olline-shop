@@ -1,0 +1,10 @@
+<!-- header.html (yoki o'zgartiringan template) -->
+
+{% if user.is_authenticated %}
+    <form action="{% url 'logout' %}" method="post" class="inline">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
